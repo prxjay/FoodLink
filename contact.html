@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us</title>
+  <link rel="stylesheet" href="home.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap');
+    
+    body {
+        font-family: 'Poppins', sans-serif;
+        background-color: #f8f9fa;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .page-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+    
+    .page-header {
+        background: linear-gradient(135deg, #8aaee0, #6b9bd2);
+        color: white;
+        padding: 40px;
+        border-radius: 20px;
+        margin-bottom: 40px;
+        text-align: center;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+    
+    .page-header h1 {
+        font-size: 2.5rem;
+        font-weight: 600;
+        margin-bottom: 10px;
+    }
+    
+    .page-header p {
+        font-size: 1.2rem;
+        opacity: 0.9;
+    }
+    
+    .content-section {
+        background: white;
+        border-radius: 20px;
+        padding: 30px;
+        margin-bottom: 40px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        border: 1px solid #e9ecef;
+    }
+    
+    .content-section h2 {
+        color: #8aaee0;
+        font-size: 1.8rem;
+        font-weight: 600;
+        border-bottom: 3px solid #8aaee0;
+        padding-bottom: 15px;
+        margin-bottom: 25px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    .content-section p {
+        color: #333;
+        font-size: 1.1rem;
+        line-height: 1.6;
+        margin-bottom: 20px;
+    }
+    
+    .contact-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        margin-top: 30px;
+    }
+    
+    .contact-card {
+        background: #f8f9fa;
+        padding: 25px;
+        border-radius: 15px;
+        border-left: 5px solid #8aaee0;
+        text-align: center;
+    }
+    
+    .contact-card i {
+        font-size: 3rem;
+        color: #8aaee0;
+        margin-bottom: 15px;
+    }
+    
+    .contact-card h3 {
+        color: #8aaee0;
+        font-size: 1.3rem;
+        font-weight: 600;
+        margin-bottom: 10px;
+    }
+    
+    .contact-card p {
+        color: #666;
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+    
+    .contact-form {
+        background: white;
+        border-radius: 20px;
+        padding: 30px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        border: 1px solid #e9ecef;
+    }
+    
+    .form-group {
+        margin-bottom: 20px;
+    }
+    
+    .form-group label {
+        display: block;
+        color: #8aaee0;
+        font-weight: 600;
+        margin-bottom: 8px;
+    }
+    
+    .form-group input,
+    .form-group textarea {
+        width: 100%;
+        padding: 12px;
+        border: 2px solid #e9ecef;
+        border-radius: 10px;
+        font-size: 1rem;
+        transition: border-color 0.3s ease;
+    }
+    
+    .form-group input:focus,
+    .form-group textarea:focus {
+        outline: none;
+        border-color: #8aaee0;
+    }
+    
+    .submit-btn {
+        background: linear-gradient(135deg, #8aaee0, #6b9bd2);
+        color: white;
+        padding: 12px 30px;
+        border: none;
+        border-radius: 10px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+    }
+    
+    .submit-btn:hover {
+        transform: translateY(-2px);
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="logo">Food<b style="color: #8aaee0;">Link</b></div>
+    <div class="hamburger">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
+    <nav class="nav-bar">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="signin.php">View Foods</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+        <li><a href="profile.php">Profile</a></li>
+      </ul>
+    </nav>
+  </header>
+  <script>
+    document.querySelector(".hamburger").onclick = function () {
+      document.querySelector(".nav-bar").classList.toggle("active");
+    }
+  </script>
+  <script src="session_check.js"></script>
+
+  <div class="page-container">
+    <div class="page-header">
+      <h1><i class="fa fa-envelope"></i> Contact Us</h1>
+      <p>Get in touch with our team - we're here to help!</p>
+    </div>
+
+    <div class="content-section">
+      <h2><i class="fa fa-phone"></i> Get In Touch</h2>
+      <p>Have questions about FoodLink? Need help with your account? Want to report an issue or suggest a feature? We'd love to hear from you!</p>
+      
+      <div class="contact-grid">
+        <div class="contact-card">
+          <i class="fa fa-envelope"></i>
+          <h3>Email Support</h3>
+          <p>support@foodlink.com<br>We typically respond within 24 hours</p>
+        </div>
+        <div class="contact-card">
+          <i class="fa fa-phone"></i>
+          <h3>Phone Support</h3>
+          <p>+1 (555) 123-4567<br>Monday - Friday, 9 AM - 6 PM</p>
+        </div>
+        <div class="contact-card">
+          <i class="fa fa-map-marker"></i>
+          <h3>Office Location</h3>
+          <p>123 Food Street<br>Community City, CC 12345</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section">
+      <h2><i class="fa fa-paper-plane"></i> Send Us a Message</h2>
+      <div class="contact-form">
+        <form id="contactForm">
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Your Email</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" required>
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+          </div>
+          <button type="submit" class="submit-btn">
+            <i class="fa fa-send"></i> Send Message
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <div class="content-section">
+      <h2><i class="fa fa-question-circle"></i> Frequently Asked Questions</h2>
+      <p><strong>Q: How do I post food on FoodLink?</strong><br>
+      A: Simply log in to your account, click "Post Food", fill in the details about your food donation, and submit. Your post will be visible to the community immediately.</p>
+      
+      <p><strong>Q: Is there a fee to use FoodLink?</strong><br>
+      A: No, FoodLink is completely free to use. We believe in making food sharing accessible to everyone in the community.</p>
+      
+      <p><strong>Q: How do I claim food from other users?</strong><br>
+      A: Browse the available food listings, click on items you're interested in, and contact the donor directly using the provided contact information.</p>
+      
+      <p><strong>Q: What if I have a problem with a food donation?</strong><br>
+      A: Please contact our support team immediately. We take all reports seriously and will work to resolve any issues quickly.</p>
+    </div>
+  </div>
+  <script>
+    document.getElementById('contactForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const form = e.target;
+      const formData = new FormData(form);
+      try {
+        const res = await fetch('contact_send.php', {
+          method: 'POST',
+          body: formData
+        });
+        const data = await res.json();
+        if (data.success) {
+          Swal.fire({
+            title: 'Message sent! ✅',
+            text: 'We will get back to you shortly.',
+            icon: 'success',
+            confirmButtonText: 'OK'
+          });
+          form.reset();
+        } else {
+          Swal.fire({
+            title: 'Failed to send',
+            text: data.error || 'Please try again later.',
+            icon: 'error',
+            confirmButtonText: 'OK'
+          });
+        }
+      } catch (err) {
+        Swal.fire({
+          title: 'Network error',
+          text: 'Please check your connection and try again.',
+          icon: 'error',
+          confirmButtonText: 'OK'
+        });
+      }
+    });
+  </script>
+</body>
+</html>

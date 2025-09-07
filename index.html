@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Food Link - Home</title>
+  <link rel="stylesheet" href="home.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap');
+    
+    body {
+        font-family: 'Poppins', sans-serif;
+        background-color: #f8f9fa;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .hero-section {
+        background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('img/cover1.jpg');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        color: white;
+        padding: 80px 20px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .hero-content {
+        position: relative;
+        z-index: 2;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    
+    .hero-content h1 {
+        font-size: 3.5rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+        text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .hero-content .highlight {
+        color: #fff;
+        text-shadow: 0 0 20px rgba(255,255,255,0.5);
+    }
+    
+    .hero-content p {
+        font-size: 1.3rem;
+        margin-bottom: 40px;
+        opacity: 0.95;
+        line-height: 1.6;
+    }
+    
+    .cta-buttons {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .cta-btn {
+        background: white;
+        color: #8aaee0;
+        padding: 15px 30px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1.1rem;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    .cta-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        background: #f8f9fa;
+    }
+    
+    .cta-btn.secondary {
+        background: transparent;
+        color: white;
+        border: 2px solid white;
+    }
+    
+    .cta-btn.secondary:hover {
+        background: white;
+        color: #8aaee0;
+    }
+    
+    .features-section {
+        padding: 80px 20px;
+        background: white;
+    }
+    
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    
+    .section-header {
+        text-align: center;
+        margin-bottom: 60px;
+    }
+    
+    .section-header h2 {
+        font-size: 2.5rem;
+        font-weight: 600;
+        color: #333;
+        margin-bottom: 15px;
+    }
+    
+    .section-header p {
+        font-size: 1.2rem;
+        color: #666;
+        max-width: 600px;
+        margin: 0 auto;
+        line-height: 1.6;
+    }
+    
+    .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 40px;
+        margin-top: 60px;
+    }
+    
+    .feature-card {
+        background: #f8f9fa;
+        padding: 40px 30px;
+        border-radius: 20px;
+        text-align: center;
+        transition: all 0.3s ease;
+        border: 1px solid #e9ecef;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .feature-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(135deg, #8aaee0, #6b9bd2);
+    }
+    
+    .feature-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        background: white;
+    }
+    
+    .feature-card i {
+        font-size: 3.5rem;
+        color: #8aaee0;
+        margin-bottom: 20px;
+        display: block;
+    }
+    
+    .feature-card h3 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: #333;
+        margin-bottom: 15px;
+    }
+    
+    .feature-card p {
+        color: #666;
+        line-height: 1.6;
+        font-size: 1rem;
+    }
+    
+    .stats-section {
+        background: linear-gradient(135deg, #8aaee0, #6b9bd2);
+        color: white;
+        padding: 80px 20px;
+        text-align: center;
+    }
+    
+    .quote {
+        font-family: 'Dancing Script', cursive;
+        font-size: 2rem;
+        font-style: italic;
+        color: white;
+        max-width: 1000px;
+        margin: 0 auto;
+        line-height: 1.2;
+        position: relative;
+        text-align: center;
+        font-weight: 600;
+        white-space: nowrap;
+    }
+    
+    .quote::before,
+    .quote::after {
+        content: '"';
+        font-size: 4rem;
+        color: white;
+        position: absolute;
+        top: -20px;
+        opacity: 0.7;
+    }
+    
+    .quote::before {
+        left: -20px;
+    }
+    
+    .quote::after {
+        right: -20px;
+    }
+    
+    .quote-author {
+        margin-top: 20px;
+        font-size: 1.1rem;
+        color: white;
+        font-weight: 600;
+        text-align: center;
+        opacity: 0.9;
+    }
+    
+    .footer {
+      background: #333;
+      color: white;
+      padding: 40px 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .footer p {
+        margin: 0;
+        color: #ccc;
+    }
+    
+    @media (max-width: 768px) {
+        .hero-content h1 {
+            font-size: 2.5rem;
+        }
+        
+        .hero-content p {
+            font-size: 1.1rem;
+        }
+        
+        .cta-buttons {
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .cta-btn {
+            width: 100%;
+            max-width: 300px;
+        }
+        
+        .features-grid {
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+        
+        .stats-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+        
+        .quote {
+            font-size: 1.2rem;
+        }
+        
+        .quote::before,
+        .quote::after {
+            font-size: 3rem;
+        }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="logo">Food<b style="color: #8aaee0;">Link</b></div>
+    <div class="hamburger">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
+    <nav class="nav-bar">
+      <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="signin.php">View Foods</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="profile.php">Profile</a></li>
+      </ul>
+    </nav>
+  </header>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var hamburger = document.querySelector('.hamburger');
+      var nav = document.querySelector('.nav-bar');
+      if (hamburger && nav) {
+        hamburger.addEventListener('click', function() {
+          nav.classList.toggle('active');
+        });
+      }
+    });
+  </script>
+  <script src="session_check.js"></script>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-content">
+      <h1>Welcome to <span class="highlight">FoodLink</span></h1>
+      <p>Connecting communities through food sharing and reducing waste. Join thousands of people making a difference in their neighborhoods.</p>
+      <div class="cta-buttons">
+        <a href="#" id="getStartedBtn" class="cta-btn">
+          <i class="fa fa-utensils"></i> Get Started
+        </a>
+        <a href="about.html" class="cta-btn secondary">
+          <i class="fa fa-info-circle"></i> Learn More
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>How FoodLink Works</h2>
+        <p>Our platform makes it easy to share food and reduce waste in your community</p>
+  </div>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <i class="fa fa-upload"></i>
+          <h3>Post Food</h3>
+          <p>Have extra food? Post it on our platform with details about what you have, where you are, and how to contact you.</p>
+  </div>
+
+        <div class="feature-card">
+          <i class="fa fa-search"></i>
+          <h3>Browse Available</h3>
+          <p>Check out what food is available in your area and find items that interest you. Filter by location, type, and more.</p>
+  </div>
+
+        <div class="feature-card">
+          <i class="fa fa-hand-paper-o"></i>
+          <h3>Claim & Connect</h3>
+          <p>Contact the donor and arrange to pick up or receive the food you've claimed. Build connections in your community.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quote Section -->
+  <section class="stats-section">
+    <div class="container">
+      <div class="quote">
+        We make a living by what we get, but we make a life by what we give.
+      </div>
+      <div class="quote-author">- Winston Churchill</div>
+    </div>
+  </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>&copy; 2025 FoodLink. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Smart Get Started button - redirects based on login status
+        document.getElementById('getStartedBtn').addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Check if user is logged in by making a request to check_session.php
+            fetch('check_session.php')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.logged_in) {
+                        // User is logged in, redirect to dashboard
+                        window.location.href = 'unified_dashboard.php';
+                    } else {
+                        // User is not logged in, redirect to signin
+                        window.location.href = 'signin.php';
+                    }
+                })
+                .catch(error => {
+                    // If there's an error, default to signin page
+                    window.location.href = 'signin.php';
+                });
+        });
+    </script>
+</body>
+</html>
