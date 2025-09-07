@@ -78,6 +78,16 @@ To learn more about the tools used in this project, check out:
 - [SweetAlert2 Documentation](https://sweetalert2.github.io/) – Popups for better UX  
 - [XAMPP Guide](https://www.apachefriends.org/docs/) – Local development server  
 
+## Demo
+Live site: [https://food-link-sepia.vercel.app/](https://food-link-sepia.vercel.app/)
+
+## Screenshots
+
+### Homepage
+<img width="1896" height="997" alt="Image" src="https://github.com/user-attachments/assets/1002d792-f257-4683-8410-ce8467c2a528" />
+
+### Dashboard
+<img width="1892" height="993" alt="Image" src="https://github.com/user-attachments/assets/c233cc17-31da-4ec4-9722-89951fa49212" />
 
 ## License
 MIT © FoodLink
